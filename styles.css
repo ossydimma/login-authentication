@@ -39,11 +39,20 @@ main {
     gap: 20px;
     padding: 50px 0;
 }
+@keyframes slide {
+    0% { 
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 section {
     display: flex;
     flex-direction: column;
     gap: 40px;
     text-align: center;
+    animation: slide ease-in-out 0.2s;
 }
 .home  {
     padding: 50px 0;
@@ -58,7 +67,7 @@ section {
     padding: 15px 50px;
 }
 
-  form {
+form {
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -75,15 +84,26 @@ section {
     border-radius: 15px;
     color: #fff;
 }
+.signup {
+    display: none;
+}
 .signup >  form > button {
     padding: 15px 0;
     border-radius: 25px;
    
 }
+.feedBack {
+    display: none;
+    color: red;
+    text-align: left;
+}
 .register-btn {
     background: #6313d3;
     margin-top: 30px;
-     color: #fff;   
+    color: #fff;   
+}
+.login {
+    display: none;
 }
 .login button {
     text-transform: uppercase;
@@ -95,6 +115,35 @@ section {
     border-radius: 25px;
     font-size: 16px ;
 }
+
+.loaderDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+  
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+     }
+    } 
+
 
 
 @media (max-width : 860px) {
