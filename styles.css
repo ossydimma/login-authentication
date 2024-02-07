@@ -16,6 +16,7 @@ h1 {
     font-weight: 900;
     font-size: 32px;
     font-family:sans-serif;
+    padding-bottom: 20px;
 }
 button {
     border: none;
@@ -92,7 +93,8 @@ form {
     border-radius: 25px;
    
 }
-.feedBack {
+.feedBack, .feedBack1 {
+    /* display: none; */
     color: red;
     text-align: left;
 }
@@ -108,11 +110,16 @@ form {
     text-transform: uppercase;
     background: #8132f1;
     color: #fff;
-    width: 120px;
+    /* width: auto;
+    margin: 30px auto 0; */
     padding: 15px 0;
-    margin: 30px auto 0;
     border-radius: 25px;
     font-size: 16px ;
+}
+.login .show {
+    display: none;
+    background: #fff;
+    color: #000;
 }
 
 .loaderDiv {

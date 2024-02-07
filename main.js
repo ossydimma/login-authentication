@@ -2,7 +2,7 @@ const loginBtn = document.querySelectorAll(".login-btn");
 const loginPage = document.querySelector(".login");
 const homePage = document.querySelector(".home");
 const signUpPage = document.querySelector(".signup");
-const signUpBtn = document.querySelector(".Sign-btn");
+const signUpBtn = document.querySelectorAll(".Sign-btn");
 const registerBtn = document.querySelector(".register-btn");
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
@@ -11,8 +11,9 @@ const logPassword = document.querySelector(".log-password");
 const confirmPassword = document.querySelector(".confirm-password");
 const feedBack = document.querySelector(".feedBack");
 const access = document.querySelector(".access");
+const show = document.querySelector(".show");
 
-const storedData = JSON.parse(localStorage.getItem('userInfo') ) || undefined;
+const storedData = JSON.parse(localStorage.getItem("userInfo")) || undefined;
 
 const data = {
   userName: "",
@@ -27,12 +28,14 @@ loginBtn.forEach((btn) => {
     loginPage.style.display = "block";
   });
 });
-
-signUpBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  homePage.style.display = "none";
-  signUpPage.style.display = "block";
-});
+signUpBtn.forEach((btn)=> {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault();
+    loginPage.style.display = "none";
+    homePage.style.display = "none";
+    signUpPage.style.display = "block";
+  });
+})
 
 registerBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -50,33 +53,49 @@ registerBtn.addEventListener("click", (event) => {
       if (confirmPassword.value === password.value) {
         data.userName = username.value;
         data.password = password.value;
-        localStorage.setItem('userInfo', JSON.stringify(data))
-        // storedData.length === 0 ? alert('hello') : console.log(storedData);
+        localStorage.setItem("userInfo", JSON.stringify(data));
         console.log(`name : ${data.userName}, pass : ${data.password}`);
       } else {
         feedBack.innerText = `both passwords does not match`;
       }
     } else {
-      feedBack.style.display = "form must be filled";
+      feedBack.innerText = "form must be filled";
     }
     registerBtn.innerHTML = `Register`;
   }, 2000);
 });
 
-access.addEventListener('click', (e)=> {
-  e.preventDefault()
+access.addEventListener("click", (e) => {
+  e.preventDefault();
+  const feedBack1 = document.querySelector(".feedBack1");
+  storedData.length === 0 ? alert("hello") : console.log(storedData);
 
-  if (logUsername.value.length !== 0  &&  logPassword.value.length !== 0) {
-    if (storedData !== undefined) {
-      if (storedData.userName === logUsername.value && storedData.password === logPassword.value ) {
-        alert('logged in')
+  if (logUsername.value !== "" && logPassword.value !== "") {
+    access.innerHTML = `
+   <div class='loaderDiv'>
+    <span class="loader"></span>
+  </div>
+   `;
+    setTimeout(() => {
+      access.innerHTML = `Login`;
+      if (storedData !== undefined) {
+       
+        if (
+          storedData.userName === logUsername.value &&
+          storedData.password === logPassword.value
+        ) {
+          feedBack1.innerText = ``;
+          alert("logged in");
+        } else {
+          feedBack1.innerText = `You entered Incorrect data, you can click the sign up button below to create an account with us`;
+          show.style.display = 'none' ? show.style.display = 'block' : ''
+        }
       } else {
-        feedBack.innerText = `You entered Incorrect data`
+        feedBack1.innerText = `Account does not exist, click the sign up button below to create an account with us`;
+        show.style.display = 'none' ? show.style.display = 'block' : ''
       }
-    } else {
-      feedBack.innerText = `Account does not exist`
-    }
+    }, 2000);
   } else {
-    feedBack.innerText = `form must be fill`
+    feedBack1.innerText = `form must be fill`;
   }
-})
+});
