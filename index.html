@@ -1,44 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Login Authentication</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section class="home">
-            <h1>Get Started</h1>
-            <div>
-                <button class="layer-one-btn login-btn">Log in</button>
-                <button class="layer-one-btn Sign-btn">Sign Up</button>
-            </div>
-        </section>
+      <section class="home">
+        <h1>Get Started</h1>
+        <div>
+          <button class="layer-one-btn login-btn">Log in</button>
+          <button class="layer-one-btn Sign-btn">Sign Up</button>
+        </div>
+      </section>
 
-        <section class="signup">
-            <h1>Register</h1>
-            <form >
-                <input type="text" placeholder="Username" class="username">
-                <input type="text" placeholder="Password" class="password">
-                <input type="text" placeholder="Comfirm Password" class="confirm-password">
-                <p class="feedBack"></p>
-                <button class="register-btn">Register</button>
-                <button class="login-btn">Have account? Sign In</button>
-            </form>
-        </section >
+      <section class="signup">
+        <h1>Register</h1>
+        <form>
+          <input type="text" placeholder="Username" class="username" />
+          <input type="text" placeholder="Password" class="password" />
+          <input
+            type="text"
+            placeholder="Comfirm Password"
+            class="confirm-password"
+          />
+          <p class="feedBack"></p>
+          <button class="register-btn">Register</button>
+          <button class="login-btn">Have account? Sign In</button>
+        </form>
+      </section>
 
-        <section class="login">
-            <h1>login</h1>
-            <form >
-                <input type="text" placeholder="Username" class="log-username">
-                <input type="text" placeholder="Password" class="log-password">
-                <p class="feedBack1"></p>
-                <button class="access">login</button>
-                <button class="show Sign-btn">Sign Up</button>
-            </form>
-        </section>
+      <section class="login">
+        <h1>login</h1>
+        <form>
+          <input type="text" placeholder="Username" class="log-username" />
+          <input type="text" placeholder="Password" class="log-password" />
+          <p class="feedBack1"></p>
+          <button class="access">login</button>
+          <button class="show Sign-btn">Sign Up</button>
+        </form>
+      </section>
+
+      <section class="success">
+        <svg
+          width="90px"
+          height="90px"
+          viewBox="-51.2 -51.2 614.40 614.40"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0">
+            <rect
+              x="-51.2"
+              y="-51.2"
+              width="614.40"
+              height="614.40"
+              rx="307.2"
+              fill="#83d043"
+              strokewidth="0"
+            ></rect>
+          </g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #fff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 20px;
+                }
+              </style>
+            </defs>
+            <g data-name="Layer 2" id="Layer_2">
+              <g
+                data-name="E408, Success, Media, media player, multimedia"
+                id="E408_Success_Media_media_player_multimedia"
+              >
+                <circle class="cls-1" cx="256" cy="256" r="246"></circle>
+                <polyline
+                  class="cls-1"
+                  points="115.54 268.77 200.67 353.9 396.46 158.1"
+                ></polyline>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <p>Registration Successful, you can now log in</p>
+        <button class="layer-one-btn login-btn">ok</button>
+      </section>
     </main>
     <script src="/main.js"></script>
-</body>
+  </body>
 </html>
